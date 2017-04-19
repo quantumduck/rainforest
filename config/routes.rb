@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :products #only: %i(index new show edit)
   # resource :users, only: [:new, :create]
   get "/sign_up", to: 'users#new'
-  post "/sign_up", to: 'users#create', as: :users
+  post "/sign_up", to: 'users#create', as: :users #required for form_for
   # resource :sessions, only: %i(new create destroy)
   get "/login", to: 'sessions#new'
   post "/login", to: 'sessions#create'
