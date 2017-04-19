@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   root 'products#index'
 
-  resources :products #only: %i(index new show edit)
+  resources :products do
+    resources :reviews, only: %i(show create update destroy)
+  end
   # resource :users, only: [:new, :create]
   get "/sign_up", to: 'users#new'
   post "/sign_up", to: 'users#create', as: :users #required for form_for
