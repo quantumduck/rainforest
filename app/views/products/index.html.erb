@@ -1,2 +1,8 @@
 <h1>Products#index</h1>
 <p>Find me in app/views/products/index.html.erb</p>
+<%= link_to 'Create a new product', new_product_path %>
+<ul class="all_products">
+<% @products.each do |product| %>
+  <li class="product"><%= product.name %></li>
+<% end %>
+</ul>
