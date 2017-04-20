@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
   has_many :reviews
   has_many :users, through: :reviews
-  belongs_to :creator, class_name "User"
+  belongs_to :creator, class_name: "User"
 
   validates :description, :name, presence: true
   validates :price_in_cents, numericality: {only_integer: true,
